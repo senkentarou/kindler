@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 
 import { makeStyles, AppBar, Container, Card, CardContent, Typography } from '@material-ui/core';
 import SearchBar from 'material-ui-search-bar';
@@ -23,8 +23,17 @@ const useStyles = makeStyles({
   }
 });
 
-export const App = () => {
+export const App: React.FC = () => {
   const classes = useStyles();
+  const [searchWord, setSearchWord] = useState<string>('');
+
+  const search = useCallback(() => {
+    window.open(
+      `https://www.amazon.co.jp/s?k=${encodeURI(searchWord)}&rh=n%3A2250738051%2Cp_n_feature_nineteen_browse-bin%3A3169286051`,
+      '_blank',
+      'noopener noreferrer'
+    )
+  }, [searchWord]);
 
   return (
     <>
@@ -42,7 +51,12 @@ export const App = () => {
             <Typography variant="body2" color="textSecondary" component="p">
               kindle unlimited の検索結果を表示します
             </Typography>
-            <SearchBar className={classes.searchBar} />
+            <SearchBar
+              className={classes.searchBar}
+              value={searchWord}
+              onChange={(word: string) => setSearchWord(word)}
+              onRequestSearch={search}
+            />
           </CardContent>
         </Card>
       </Container>
