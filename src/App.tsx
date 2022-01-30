@@ -39,7 +39,7 @@ export const App: React.FC = () => {
     <>
       <AppBar position="static" className={classes.appBar}>
         <Typography variant="h3" component="h1" className={classes.title}>
-          Sample kindle unlimited 検索アプリ
+          kindle unlimited 検索アプリ
         </Typography>
       </AppBar>
       <Container maxWidth={false}>
@@ -49,7 +49,7 @@ export const App: React.FC = () => {
               検索しよう
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              kindle unlimited の検索結果を表示します
+              入力した文字で kindle unlimited の検索結果を開きます（別タブ）
             </Typography>
             <SearchBar
               className={classes.searchBar}
