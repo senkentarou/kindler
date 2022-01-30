@@ -39,7 +39,7 @@ export const App: React.FC = () => {
     <>
       <AppBar position="static" className={classes.appBar}>
         <Typography variant="h3" component="h1" className={classes.title}>
-          kindle unlimited 検索アプリ
+          Kindler（kindle unlimited 検索アプリ）
         </Typography>
       </AppBar>
       <Container maxWidth={false}>
