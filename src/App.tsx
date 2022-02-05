@@ -39,7 +39,7 @@ export const App: React.FC = () => {
     <>
       <KindlerAppBar position="static">
         <AppTitle variant="h3">
-          Kindler（kindle unlimited 検索アプリ）
+          Kindler（kindle 検索アプリ）
         </AppTitle>
       </KindlerAppBar>
       <Container maxWidth={false}>
@@ -49,7 +49,7 @@ export const App: React.FC = () => {
               検索しよう
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              入力した文字で kindle unlimited の検索結果を開きます（別タブ）
+              入力した文字でAmazon webサイトのkindle検索結果を開きます（別タブ）
             </Typography>
             <KindleUnlimitedSearchBar
               value={searchWord}
