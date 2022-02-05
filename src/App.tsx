@@ -1,30 +1,30 @@
 import React, { useState, useCallback } from 'react';
 
-import { makeStyles, AppBar, Container, Card, CardContent, Typography } from '@material-ui/core';
+import { styled, AppBar, Container, Card, CardContent, Typography } from '@material-ui/core';
 import SearchBar from 'material-ui-search-bar';
 
-const useStyles = makeStyles({
-  appBar: {
-    width: '100%',
-    height: '5rem',
-    marginBottom: '1rem'
-  },
-  title: {
-    marginTop: '1rem',
-    marginLeft: '1rem'
-  },
-  mainCard: {
-    width: '100%',
-    height: '100%'
-  },
-  searchBar: {
-    marginTop: '1rem',
-    maxWidth: '800px'
-  }
+const KindleUnlimitedSearchBar = styled(SearchBar)({
+  marginTop: '1rem',
+  maxWidth: '800px'
+});
+
+const KindlerAppBar = styled(AppBar)({
+  width: '100%',
+  height: '5rem',
+  marginBottom: '1rem'
+});
+
+const AppTitle = styled(Typography)({
+  marginTop: '1rem',
+  marginLeft: '1rem'
+});
+
+const SearchCard = styled(Card)({
+  width: '100%',
+  height: '100%'
 });
 
 export const App: React.FC = () => {
-  const classes = useStyles();
   const [searchWord, setSearchWord] = useState<string>('');
 
   const search = useCallback(() => {
@@ -37,13 +37,13 @@ export const App: React.FC = () => {
 
   return (
     <>
-      <AppBar position="static" className={classes.appBar}>
-        <Typography variant="h3" component="h1" className={classes.title}>
+      <KindlerAppBar position="static">
+        <AppTitle variant="h3">
           Kindler（kindle unlimited 検索アプリ）
-        </Typography>
-      </AppBar>
+        </AppTitle>
+      </KindlerAppBar>
       <Container maxWidth={false}>
-        <Card className={classes.mainCard}>
+        <SearchCard>
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               検索しよう
@@ -51,14 +51,13 @@ export const App: React.FC = () => {
             <Typography variant="body2" color="textSecondary" component="p">
               入力した文字で kindle unlimited の検索結果を開きます（別タブ）
             </Typography>
-            <SearchBar
-              className={classes.searchBar}
+            <KindleUnlimitedSearchBar
               value={searchWord}
               onChange={(word: string) => setSearchWord(word)}
               onRequestSearch={search}
             />
           </CardContent>
-        </Card>
+        </SearchCard>
       </Container>
     </>
   );
