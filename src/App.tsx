@@ -94,7 +94,7 @@ export const App: React.FC = () => {
                   label="prime reading"
                 />
               </FormGroup>
-              <FormHelperText>チェックが付いた項目が検索オプションに含まれます</FormHelperText>
+              <FormHelperText>チェックの付いた項目が検索オプションに含まれます</FormHelperText>
             </FormControl>
             <KindleUnlimitedSearchBar
               value={searchWord}
