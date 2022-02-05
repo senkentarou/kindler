@@ -3,7 +3,7 @@ import React, { useState, useCallback } from 'react';
 import { styled, AppBar, Container, Card, CardContent, Typography, FormControl, FormGroup, FormControlLabel, Checkbox, FormHelperText } from '@material-ui/core';
 import SearchBar from 'material-ui-search-bar';
 
-const KindleUnlimitedSearchBar = styled(SearchBar)({
+const KindleSearchBar = styled(SearchBar)({
   marginTop: '1rem',
   maxWidth: '800px'
 });
@@ -96,7 +96,7 @@ export const App: React.FC = () => {
               </FormGroup>
               <FormHelperText>チェックの付いた項目が検索オプションに含まれます</FormHelperText>
             </FormControl>
-            <KindleUnlimitedSearchBar
+            <KindleSearchBar
               value={searchWord}
               onChange={(word: string) => setSearchWord(word)}
               onRequestSearch={search}
