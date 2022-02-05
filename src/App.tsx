@@ -10,12 +10,12 @@ const KindleUnlimitedSearchBar = styled(SearchBar)({
 
 const KindlerAppBar = styled(AppBar)({
   width: '100%',
-  height: '5rem',
-  marginBottom: '1rem'
+  height: '4rem',
+  marginBottom: '1rem',
+  justifyContent: 'center'
 });
 
 const AppTitle = styled(Typography)({
-  marginTop: '1rem',
   marginLeft: '1rem'
 });
 
@@ -38,7 +38,7 @@ export const App: React.FC = () => {
   return (
     <>
       <KindlerAppBar position="static">
-        <AppTitle variant="h3">
+        <AppTitle variant="h4">
           Kindler（kindle 検索アプリ）
         </AppTitle>
       </KindlerAppBar>
