@@ -1,6 +1,17 @@
 import React, { useState, useCallback } from 'react';
 
-import { AppBar, Container, Card, CardContent, Typography, FormControl, FormGroup, FormControlLabel, Checkbox, FormHelperText } from '@mui/material';
+import {
+  AppBar,
+  Container,
+  Card,
+  CardContent,
+  Typography,
+  FormControl,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+  FormHelperText
+} from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 import { SearchBar } from './SearchBar';
@@ -32,7 +43,7 @@ const KINDLE_SEARCH_OPTION_MAP = {
 };
 
 type KindleSearchOption = 'kindleUnlimited' | 'primeReading';
-type SearchOption = {[keys in KindleSearchOption]: boolean};
+type SearchOption = { [keys in KindleSearchOption]: boolean };
 
 export const App: React.FC = () => {
   const [searchWord, setSearchWord] = useState<string>('');
@@ -52,25 +63,28 @@ export const App: React.FC = () => {
     }, initialOptions);
 
     window.open(
-      `https://www.amazon.co.jp/s?k=${encodeURIComponent(searchWord)}&rh=${encodeURIComponent(selectedOptions.join(','))}`,
+      `https://www.amazon.co.jp/s?k=${encodeURIComponent(searchWord)}&rh=${encodeURIComponent(
+        selectedOptions.join(',')
+      )}`,
       '_blank',
       'noopener noreferrer'
     );
   }, [searchWord, searchOptions]);
 
-  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchOptions({
-      ...searchOptions,
-      [event.currentTarget.name]: event.currentTarget.checked
-    });
-  }, [searchOptions, setSearchOptions]);
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchOptions({
+        ...searchOptions,
+        [event.currentTarget.name]: event.currentTarget.checked
+      });
+    },
+    [searchOptions, setSearchOptions]
+  );
 
   return (
     <>
       <KindlerAppBar position="static">
-        <AppTitle variant="h4">
-          Kindler（kindle 検索アプリ）
-        </AppTitle>
+        <AppTitle variant="h4">Kindler（kindle 検索アプリ）</AppTitle>
       </KindlerAppBar>
       <Container maxWidth={false}>
         <SearchCard>
