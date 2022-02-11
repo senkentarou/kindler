@@ -1,6 +1,6 @@
 # Kindler
 
-kindle unlimited検索アプリです
+kindle検索アプリです
 
-`npm start`
+`yarn start`
 
