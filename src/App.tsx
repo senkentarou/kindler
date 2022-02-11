@@ -55,14 +55,14 @@ export const App: React.FC = () => {
       `https://www.amazon.co.jp/s?k=${encodeURIComponent(searchWord)}&rh=${encodeURIComponent(selectedOptions.join(','))}`,
       '_blank',
       'noopener noreferrer'
-    )
+    );
   }, [searchWord, searchOptions]);
 
   const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchOptions({
       ...searchOptions,
       [event.currentTarget.name]: event.currentTarget.checked
-    })
+    });
   }, [searchOptions, setSearchOptions]);
 
   return (

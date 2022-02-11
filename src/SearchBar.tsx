@@ -49,7 +49,7 @@ export const SearchBar: React.FC<Props> = ({
     if (event.key == 'Enter') {
       onRequestSearch();
     }
-  }
+  };
 
   return (
     <Search>
