@@ -6,11 +6,12 @@
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturn": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -21,6 +22,6 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src/**/*"
   ]
 }
