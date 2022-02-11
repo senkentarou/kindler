@@ -1,7 +1,9 @@
 import React, { useState, useCallback } from 'react';
 
-import { styled, AppBar, Container, Card, CardContent, Typography, FormControl, FormGroup, FormControlLabel, Checkbox, FormHelperText } from '@material-ui/core';
-import SearchBar from 'material-ui-search-bar';
+import { AppBar, Container, Card, CardContent, Typography, FormControl, FormGroup, FormControlLabel, Checkbox, FormHelperText } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
+import { SearchBar } from './SearchBar';
 
 const KindleSearchBar = styled(SearchBar)({
   marginTop: '1rem',
