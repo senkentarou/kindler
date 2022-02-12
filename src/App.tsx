@@ -111,12 +111,12 @@ export const App: React.FC = () => {
                 />
               </FormGroup>
               <FormHelperText>チェックの付いた項目が検索オプションに含まれます</FormHelperText>
+              <KindleSearchBar
+                value={searchWord}
+                onChange={(word: string) => setSearchWord(word)}
+                onRequestSearch={search}
+              />
             </FormControl>
-            <KindleSearchBar
-              value={searchWord}
-              onChange={(word: string) => setSearchWord(word)}
-              onRequestSearch={search}
-            />
           </CardContent>
         </SearchCard>
       </Container>
